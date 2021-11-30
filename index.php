@@ -1,9 +1,8 @@
-<? php
+<?php
 if ($argc != 2) {
-    echo "Использование: php hello.php [name].\n";
-    exit(1);
+    echo "Использование123: php[name].\n";
+
 }
 $name = $argv[1];
 echo "Привет, $name\n";
-echo "hello world";
-
+echo "Привет, мир!!";
