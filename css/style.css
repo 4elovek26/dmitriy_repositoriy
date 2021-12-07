@@ -194,7 +194,7 @@ Footer
     position: relative;
 }
 .footer .footer-section{
-    padding: 20px;
+    padding: 45px;
 }
 .footer h4, .footer h3{
     color: white;
@@ -231,22 +231,28 @@ Footer
     margin-left: 15px;
     transition: all .3s;
 }
-
+.footer .contact-form h3{
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
 .footer .contact-form .contact-input{
     background: #272727;
     color: #bebdbd;
+    margin-top: 0px;
     margin-bottom: 10px;
     line-height: 1.5rem;
     padding: .9rem 1.4rem;
     border: none;
     width: 100%;
 }
+
 .footer .contact-form .contact-input:focus{
     background: #1a1a1a;
 }
 .footer .contact-form .contact-btn{
     float: right;
     font-size: 1.1em;
+    color: white;
 }
 .footer .footer-bottom{
     background: #343a40;
@@ -259,6 +265,7 @@ Footer
     left: 0px;
     padding-top: 20px;
 }
+
 /*
 single-post
 */
@@ -278,6 +285,24 @@ single-post
 .single_post a:hover{
     text-decoration: none;
     color: #6d7ccc;
+}
+.reg_form h2{
+    text-align: center;
+    margin: 30px 0;
+}
+.reg_form input{
+    height: 3.3rem;
+}
+.reg_form a{
+    font-size: 1.2em;
+    transition: all .3s;
+    color: #5c5b5b;
+    text-decoration: none;
+    margin-left: 60px;
+}
+.reg_form a:hover{
+    margin-left: 55px;
+    transition: all .3s;
 }
 
 
