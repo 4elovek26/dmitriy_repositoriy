@@ -1,5 +1,6 @@
-<?php include "path.php";
-include "app/database/database.php";
+<?php
+include "../../path.php";
+include "../../app/database/database.php";
 ?> 
 <!doctype html>
 <html lang="en">
@@ -14,7 +15,7 @@ include "app/database/database.php";
     <!-- Icon awesome-->
     <script src="https://kit.fontawesome.com/fe653f44dd.js" crossorigin="anonymous"></script>
     <!-- Custom Styling-->
-    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="../../css/admin.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet"> 
@@ -22,130 +23,51 @@ include "app/database/database.php";
   </head>
   <body>
 <!--Шапка сайта-->
-<?php include("app/include/header.php");?> 
-
- <!--Карусель-->  
+<?php include("../../app/include/header-admin.php");?>
 <div class="container">
-  <div class="row">
-    <h2 class="slider-title">Топ публикации</h2>
-  </div>
-  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="image/image1.png" class="d-block w-100" alt="...">
-        <div class="carousel-caption-hack carousel-caption d-none d-md-block">
-          <h5><a href="">First slide label</a></h5>
+    <div class="row">
+        <div class="sidebar col-3">
+            <ul>
+                <li>
+                    <a href="">Записи</a>
+                </li>
+                <li>
+                    <a href="">Пользователи</a>
+                </li>
+                <li>
+                    <a href="">Категории</a>
+                </li>
+            </ul>
         </div>
-      </div>
-      <div class="carousel-item">
-        <img src="image/image2.png" class="d-block w-100" alt="...">
-        <div class="carousel-caption-hack carousel-caption d-none d-md-block">
-          <h5><a href="">Second slide label</a></h5>
+
+
+        <div class="posts col-9">
+            <div class="button row">
+                <a href="create.html" class="col-2 btn btn-success">Add Post</a>
+                <span class="col-1"></span>
+                <a href="index.html" class="col-3 btn btn-warning">Manage Post</a>
+            </div>
+            <div class="row title-table">
+                <h2>Управление записями</h2>
+                <div class="col-1">ID</div>
+                <div class="col-5">Название</div>
+                <div class="col-2">Автор</div>
+                <div class="col-4">Управление</div>
+            </div>
+            <div class="row post">
+                <div class="id col-1">1</div>
+                <div class="title col-5">Рандом статья</div>
+                <div class="author col-2">Админский автор</div>
+                <div class="red col-2"><a href="">edit</a></div>
+                <div class="del col-2"><a href="">delete</a></div>
+            </div>
         </div>
-      </div>
-      <div class="carousel-item">
-        <img src="image/image3.png" class="d-block w-100" alt="...">
-        <div class="carousel-caption-hack carousel-caption d-none d-md-block">
-          <h5><a href="">Third slide label</a></h5>
-        </div>
-      </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
 </div>
 
-<!--блок мейн-->
-<div class="container">
-  <div class="content row">
-      <div class = "main-content col-md-9 col-12">
-        <h2>Последние публикации</h2>
-
-        <div class="post row">
-          <div class="img col-12 col-md-4">
-            <img src="image/image3.png" class="img-thumbnail" alt="">
-          </div>
-          <div class="post_text col-12 col-md-8">
-            <h3>
-              <a href="#">Прикольная статья про Старый Новый Год</a>
-            </h3>
-            <i class="far fa-user">Имя автора</i>
-            <i class="far fa-calendar">Dec 6, 2021</i>
-            <p class="preview-text">
-              My text area
-            </p>
-          </div>
-        </div>
-
-        <div class="post row">
-          <div class="img col-12 col-md-4">
-            <img src="image/image2.png" class="img-thumbnail" alt="">
-          </div>
-          <div class="post_text col-12 col-md-8">
-            <h3>
-              <a href="#">Прикольная статья про Новый 2022 Год</a>
-            </h3>
-            <i class="far fa-user">Имя автора</i>
-            <i class="far fa-calendar">Dec 6, 2021</i>
-            <p class="preview-text">
-              My text area
-            </p>
-          </div>
-        </div>
-
-        <div class="post row">
-          <div class="img col-12 col-md-4">
-            <img src="image/image1.png" class="img-thumbnail" alt="">
-          </div>
-          <div class="post_text col-12 col-md-8">
-            <h3>
-              <a href="#">Итоги 2021</a>
-            </h3>
-            <i class="far fa-user">Имя автора</i>
-            <i class="far fa-calendar">Dec 6, 2021</i>
-            <p class="preview-text">
-              My text area
-            </p>
-          </div>
-        </div>
-
-      </div>
-
-      <!--sidebar-->
-      <div class="sidebar col-md-3 col-12">
-
-        <div class="section search">
-          <h3>Поиск</h3>
-          <form action="/" method="post">
-            <input type="text" name="search-term" class="text-input" placeholder="Введите искомое слово...">
-          </form>
-        </div>
-
-        <div class="section topics">
-          <h3>Категории</h3>
-          <ul>
-            <li><a href="#">Poems</a></li>
-            <li><a href="#">Quotes</a></li>
-            <li><a href="#">Fiction</a></li>
-            <li><a href="#">Biography</a></li>
-            <li><a href="#">Motivation</a></li>
-            <li><a href="#">Inspiration</a></li>
-            <li><a href="#">Life Lessons</a></li>
-          </ul>
-        </div>
-
-      </div>
-  </div>
-</div>
 
 <!--footer-->
-<?php include("app/include/footer.php");?> 
+<?php include("../../app/include/footer.php");?>
 
 
     <!-- Optional JavaScript; choose one of the two! -->
