@@ -1,5 +1,4 @@
 <?php
-include "../../path.php";
 include "../../app/database/database.php";
 ?>
 <!doctype html>
@@ -26,32 +25,20 @@ include "../../app/database/database.php";
 <?php include("../../app/include/header-admin.php");?>
 <div class="container">
     <div class="row">
-        <div class="sidebar col-3">
-            <ul>
-                <li>
-                    <a href="">Записи</a>
-                </li>
-                <li>
-                    <a href="">Пользователи</a>
-                </li>
-                <li>
-                    <a href="">Категории</a>
-                </li>
-            </ul>
-        </div>
+        <?php include "../../app/include/sidebal-admin.php"; ?>
 
 
         <div class="posts col-9">
             <div class="button row">
-                <a href="create.html" class="col-2 btn btn-success">Add Post</a>
+                <a href="<?php echo BASE_URL . "admin/posts/create.php"; ?>" class="col-2 btn btn-success">Добавить</a>
                 <span class="col-1"></span>
-                <a href="index.html" class="col-3 btn btn-warning">Manage Post</a>
+                <a href="<?php echo BASE_URL . "admin/posts/index.php"; ?>" class="col-3 btn btn-warning">Редактировать</a>
             </div>
             <div class="row title-table">
                 <h2>Добавление записей</h2>
             </div>
             <div class="row add-post">
-                <form>
+                <form action="create.php" >
                     <div class="col">
                         <input type="text" class="form-control" placeholder="Title" aria-label="Название статьи">
                     </div>

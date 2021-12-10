@@ -1,3 +1,4 @@
+<?php require_once "../../path.php"; ?>
 <header class="container-fluid">
   <div class="container">
     <div class="row">

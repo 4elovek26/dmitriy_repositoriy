@@ -1,4 +1,4 @@
-<?php include("path.php");
+<?php include "path.php";
       include "app/controllers/users.php";
 ?> 
 <!doctype html>
