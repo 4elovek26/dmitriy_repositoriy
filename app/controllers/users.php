@@ -1,5 +1,5 @@
 <?php
-include "app/database/database.php";
+include BASE_PATH."/app/database/database.php";
 
 function loginSession($arr){
     $_SESSION['id'] = $arr['id'];

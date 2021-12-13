@@ -1,5 +1,6 @@
 <?php
-include "../../app/database/database.php";
+    include "../../path.php";
+    include "../../app/controllers/posts.php";
 ?> 
 <!doctype html>
 <html lang="en">
@@ -41,13 +42,22 @@ include "../../app/database/database.php";
                 <div class="col-2">Автор</div>
                 <div class="col-4">Управление</div>
             </div>
+            <?php foreach($postsAdm as $key => $post): ?>
             <div class="row post">
-                <div class="id col-1">1</div>
-                <div class="title col-5">Рандом статья</div>
-                <div class="author col-2">Админский автор</div>
-                <div class="red col-2"><a href="">edit</a></div>
-                <div class="del col-2"><a href="">delete</a></div>
+                <div class="id col-1"><?=$key +1; ?></div>
+                <div class="title col-5"><?=$post['title']; ?></div>
+                <div class="author col-2"><?=$post['username']; ?></div>
+                <div class="red col-1"><a href="edit.php?id=<?=$topic['id']; ?>">edit</a></div>
+                <div class="del col-1"><a href="edit.php?del_id=<?=$topic['id']; ?>">delete</a></div>
+                <?php if($post['status']): ?>
+                <div class="status col-2"><a href="">unpublish</a></div>
+                <?php else: ?>
+                <div class="status col-2"><a href="">publish</a></div>
+                <?php endif; ?>
             </div>
+            <?php endforeach; ?>
+
+
         </div>
     </div>
 </div>

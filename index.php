@@ -1,5 +1,6 @@
-<?php include "path.php";
-include "app/database/database.php";
+<?php
+    include "path.php";
+    include "app/controllers/topics.php";
 ?> 
 <!doctype html>
 <html lang="en">
@@ -130,13 +131,11 @@ include "app/database/database.php";
         <div class="section topics">
           <h3>Категории</h3>
           <ul>
-            <li><a href="#">Poems</a></li>
-            <li><a href="#">Quotes</a></li>
-            <li><a href="#">Fiction</a></li>
-            <li><a href="#">Biography</a></li>
-            <li><a href="#">Motivation</a></li>
-            <li><a href="#">Inspiration</a></li>
-            <li><a href="#">Life Lessons</a></li>
+              <?php foreach($topicsAll as $key => $topic): ?>
+                <li>
+                    <a href="#"><?=$topic['name']; ?></a>
+                </li>
+              <?php endforeach; ?>
           </ul>
         </div>
 

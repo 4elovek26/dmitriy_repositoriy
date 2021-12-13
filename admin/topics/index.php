@@ -1,4 +1,5 @@
 <?php
+include "../../path.php";
 include "../../app/controllers/topics.php";
 ?>
 <!doctype html>
@@ -45,7 +46,7 @@ include "../../app/controllers/topics.php";
                 <div class="id col-1"><?=$key +1; ?></div>
                 <div class="title col-5"><?=$topic['name']; ?></div>
                 <div class="red col-2"><a href="edit.php?id=<?=$topic['id']; ?>">edit</a></div>
-                <div class="del col-2"><a href="#">delete</a></div>
+                <div class="del col-2"><a href="edit.php?del_id=<?=$topic['id']; ?>">delete</a></div>
             </div>
             <?php endforeach; ?>
         </div>
