@@ -47,8 +47,8 @@
                 <div class="id col-1"><?=$key +1; ?></div>
                 <div class="title col-5"><?=$post['title']; ?></div>
                 <div class="author col-2"><?=$post['username']; ?></div>
-                <div class="red col-1"><a href="edit.php?id=<?=$topic['id']; ?>">edit</a></div>
-                <div class="del col-1"><a href="edit.php?del_id=<?=$topic['id']; ?>">delete</a></div>
+                <div class="red col-1"><a href="edit.php?id=<?=$post['id']; ?>">edit</a></div>
+                <div class="del col-1"><a href="edit.php?del_id=<?=$post['id']; ?>">delete</a></div>
                 <?php if($post['status']): ?>
                 <div class="status col-2"><a href="">unpublish</a></div>
                 <?php else: ?>
