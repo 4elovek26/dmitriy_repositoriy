@@ -78,6 +78,7 @@ for ($i = 0; $i <count($data); $i++){
 
 echo implode(" ", $data) . "<br>";
 
+//task1
 $task1string = "Student, hello!";
 $countKey = str_split($task1string);;
 $count = array_fill_keys($countKey, 0);
@@ -93,7 +94,7 @@ foreach ($count as $key => $value){
 }
 
 var_dump($count);
-
+//task2
 $countTask2 = [];
 for ($i = 0; $i<10; $i++){
     $countTask2[] = rand(0, 100);
@@ -109,4 +110,42 @@ foreach ($countTask2 as $key => $value){
 echo $value;
 
 var_dump($countTask2);
-echo "[$minKey] = $min";
+echo "[$minKey] = $min <br><br>";
+//task3
+$arrayTask3 = [];
+$rand = rand(3,20);
+for ($i = 0; $i<$rand; $i++){
+    $arrayTask3[] = rand(0,10);
+}
+
+var_dump($arrayTask3);
+$arrayTask3Sum = 0;
+for($i=0; $i<count($arrayTask3); $i+=2){
+    $arrayTask3Sum += $arrayTask3[$i];
+}
+echo $arrayTask3Sum . "<br>";
+//task4
+$studentCount = rand(1, 1000000);
+$ostatok = $studentCount % 10;
+switch($studentCount){
+    case $studentCount == 1:
+        echo "На учёбе $studentCount студент";
+        break;
+    case $studentCount == 2:
+    case $studentCount == 3:
+    case $studentCount == 4:
+        echo "На учёбе $studentCount студента";
+        break;
+    case $ostatok == 0:
+    case $ostatok == 1:
+    case $ostatok == 2:
+    case $ostatok == 3:
+    case $ostatok == 4:
+    case $ostatok == 5:
+    case $ostatok == 6:
+    case $ostatok == 7:
+    case $ostatok == 8:
+    case $ostatok == 9:
+        echo "На учёбе $studentCount студентов";
+        break;
+}

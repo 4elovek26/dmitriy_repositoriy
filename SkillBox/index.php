@@ -33,19 +33,20 @@
 				
 			
 			</td>
+
             <td class="right-collum-index">
-				
 				<div class="project-folders-menu">
 					<ul class="project-folders-v">
-    					<li class="project-folders-v-active"><a href="#">Авторизация</a></li>
+    					<li class="project-folders-v-active"><a href="">Авторизация</a></li>
     					<li><a href="#">Регистрация</a></li>
     					<li><a href="#">Забыли пароль?</a></li>
 					</ul>
 				    <div class="clearfix"></div>
 				</div>
-                
+
+                <?php if($_GET!=['login' => 'yes']){ ?>
 				<div class="index-auth">
-                    <form action="" method="">
+                    <form action="index.php?login=yes" method="post">
 						<table width="100%" border="0" cellspacing="0" cellpadding="0">
 							<tr>
 								<td class="iat">
@@ -65,7 +66,7 @@
 						</table>
                     </form>
 				</div>
-			
+			    <?php }; ?>
 			</td>
         </tr>
     </table>
