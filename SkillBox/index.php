@@ -1,3 +1,30 @@
+<?php
+require_once __DIR__ . "/data/users.php";
+require_once __DIR__ . "/data/passwords.php";
+    $arrayKeyPass = '';
+    $arrayKeyUser = '';
+    $truereg = 0;
+    $falsereg = 0;
+    $message = '';
+
+if(!empty($_POST)) {
+    $userLogin = $_POST['login'];
+    $userPassword = $_POST['password'];
+    $arrayKeyUser = array_search($_POST['login'], $users);
+    $arrayKeyPass = array_search($_POST['password'], $passwords);
+
+    if ($arrayKeyUser != false || $arrayKeyUser == $arrayKeyPass) {
+        $message = 'Вы успешно авторизировались';
+        $truereg = 1;
+    } else {
+        $message = 'Логин или пароль введены неверно';
+        $falsereg = 1;
+    }
+} else {
+    $userLogin = '';
+    $userPassword = '';
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -44,14 +71,14 @@
 				    <div class="clearfix"></div>
 				</div>
 
-                <?php if($_GET!=['login' => 'yes']){ ?>
+                <?php if($_SERVER['REQUEST_METHOD'] === 'POST' && array_search($_POST['login'], $users) != false && array_search($_POST['login'], $users) == array_search($_POST['password'], $passwords)){ ?>
 				<div class="index-auth">
-                    <form action="index.php?login=yes" method="post">
+                    <form action="index.php?login=yes&user=<?=$userLogin?>&&password=<?=$userPassword?>" method="post">
 						<table width="100%" border="0" cellspacing="0" cellpadding="0">
 							<tr>
 								<td class="iat">
                                     <label for="login_id">Ваш e-mail:</label>
-                                    <input id="login_id" size="30" name="login">
+                                    <input id="login_id" size="30" name="login" value="<?=$userLogin?>">
                                 </td>
 							</tr>
 							<tr>
